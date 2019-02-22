@@ -201,6 +201,8 @@ StartLimitBurst=5
 WantedBy=multi-user.target
 EOF
 sudo chown root:root /etc/systemd/system/$COIN_NAME.service
+sudo chown -R $USERNAME:$USERNAME /home/$USERNAME/.zelcash
+sudo chown -R $USERNAME:$USERNAME /home/$USERNAME/.zcash-params
 sudo systemctl daemon-reload
 sleep 3
 sudo systemctl enable $COIN_NAME.service &> /dev/null
