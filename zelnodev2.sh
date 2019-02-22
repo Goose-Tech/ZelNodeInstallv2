@@ -237,15 +237,15 @@ sleep 1
 done
 printf "\n"
 
-echo -e "\033[1;32mGetting info...\033[0m"
-$COIN_CLI getinfo
+#echo -e "\033[1;32mGetting info...\033[0m"
+#$COIN_CLI getinfo
 
 echo -e "\033[1;32mStarting your zelnode with final details\033[0m"
 
 sleep 10
 
 printf "\033[1;34m"
-figlet -t -k "WELCOME   TO   zelnodes" 
+figlet -t -k "WELCOME   TO   ZELNODES" 
 printf "\e[0m"
 
 echo -e "\033[1;33m=============================================================================="
