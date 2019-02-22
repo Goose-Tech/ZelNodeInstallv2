@@ -246,10 +246,10 @@ printf "\033[1;34m"
 figlet -t -k "WELCOME   TO   zelnodes" 
 printf "\e[0m"
 
-echo -e "\033[1;33m========================================================================================"
+echo -e "\033[1;33m=============================================================================="
 echo -e "\033[1;32mPLEASE COMPLETE THE ZELNODE SETUP IN YOUR ZELCORE WALLET\033[0m"
 echo -e "COURTESY OF \033[1;32mALTTANK FAM\033[0m, \033[1;32mDK808 \033[0m, \033[1;32mGOOSE-TECH \033[0m & \033[1;32mSkyslayer"
-echo -e "\033[1;33m========================================================================================\033[0m"
+echo -e "\033[1;33m==============================================================================\033[0m"
 echo -e
 read -n1 -r -p "Press any key to continue..." key
 for (( countera=15; countera>0; countera-- ))
@@ -262,7 +262,7 @@ echo -e "\033[1;33m===========================================================\0
 echo ""
 sudo zelcash-cli getinfo
 echo -e '\033[1;32mPress [CTRL-C] when correct blockheight has been reached.\033[0m'
-    for (( counterb=30; counterb>0; counterb-- ))
+    for (( counterb=120; counterb>0; counterb-- ))
     do
     echo -n ". "
     sleep 1
