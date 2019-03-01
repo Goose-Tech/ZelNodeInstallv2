@@ -43,6 +43,9 @@ CYAN='\033[1;36m'
 NC='\033[0m'
 STOP='\e[0m'
 FETCHPARAMS='https://raw.githubusercontent.com/zelcash/zelcash/master/zcutil/fetch-params.sh'
+HIGHESTBLOCK="$(wget -nv -qO - https://explorer.zel.cash/api/status | jq .info.blocks)"
+CURRENTBLOCK="$(sudo $COIN_CLI getblockcount)"
+
 #end of required details
 #
 #
@@ -95,6 +98,7 @@ sudo apt-get install build-essential libtool pkg-config -y
 sudo apt-get install libc6-dev m4 g++-multilib -y
 sudo apt-get install autoconf ncurses-dev unzip git python python-zmq -y
 sudo apt-get install wget curl bsdmainutils automake -y
+sudo apt-get install jq -y
 sudo apt-get remove sysbench -y
 echo -e "\033[1;33mPackages complete...\033[0m"
 echo -e
@@ -262,7 +266,9 @@ echo -e "\033[1;32mZELNODE SYNC STATUS"
 echo -e "THIS SCREEN REFRESHES EVERY 30 SECONDS"
 echo -e "\033[1;33m===========================================================\033[0m"
 echo ""
-sudo zelcash-cli getinfo
+echo "Highest: $HIGHESTBLOCK";
+echo "Currently at: $CURRENTBLOCK";
+echo ""
 echo -e '\033[1;32mPress [CTRL-C] when correct blockheight has been reached.\033[0m'
     for (( counterb=120; counterb>0; counterb-- ))
     do
