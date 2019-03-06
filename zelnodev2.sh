@@ -218,12 +218,13 @@ echo -e "==================================================================\033[
 echo ""
 
 echo -e "\033[1;32mConfiguring firewall and enabling fail2ban...\033[0m"
-sudo ufw allow ssh/tcp
-sudo ufw allow $PORT/tcp
-sudo ufw logging on
 sudo ufw default deny incoming
 sudo ufw default allow outgoing
+sudo ufw limit OpenSSH
+sudo ufw allow $PORT/tcp
+sudo ufw logging on
 echo "y" | sudo ufw enable >/dev/null 2>&1
+sudo cp /etc/fail2ban/jail.conf /etc/fail2ban/jail.local
 sudo systemctl enable fail2ban >/dev/null 2>&1
 sudo systemctl start fail2ban >/dev/null 2>&1
 echo -e "\033[1;33mBasic security completed...\033[0m"
